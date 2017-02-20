@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * display the text to the text view
+     */
     public void displayToView(){
         //get the text view to display the digits and result
         TextView displayView = (TextView)findViewById(R.id.displayView);
