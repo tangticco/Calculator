@@ -17,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
     //create some variables for checking
     private boolean userIsTyping = false;
-
     private String displayText = "";
+    private CalculatorModel newCalcModel = new CalculatorModel();
 
     /**
-     * This is a method when a digit button beingh pressed
+     * This is a method when a digit button being pressed
      * @param v : the button being pressed
      */
     public void touchDigit(View v){
@@ -44,8 +44,42 @@ public class MainActivity extends AppCompatActivity {
 
         //set the userIsTyping to true and display the text on the TextView
         userIsTyping = true;
-        displayView.setText(displayText);
+        displayToView();
 
+    }
+
+    /**
+     * this is a method when a operation button being pressed
+     * @param v: the button being pressed
+     */
+    public void touchOperation(View v){
+
+
+
+        //get the digit(String type) from the button
+        int operationId = v.getId();    //get the id of the digit button
+        Button operationButton  = (Button)findViewById(operationId);    //get the button by the id above
+        String operationText = operationButton.getText().toString();
+
+        if(userIsTyping){
+            newCalcModel.setOperand(Double.parseDouble(displayText));
+            userIsTyping = false;
+        }
+
+        newCalcModel.performOperation(operationText);
+
+
+        //display the operation to the displayView
+        displayText = operationText;
+        displayToView();
+
+    }
+
+
+    public void displayToView(){
+        //get the text view to display the digits and result
+        TextView displayView = (TextView)findViewById(R.id.displayView);
+        displayView.setText(displayText);
     }
 
 }

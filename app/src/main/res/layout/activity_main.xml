@@ -143,4 +143,48 @@
         android:textAlignment="textEnd"
         android:layout_alignRight="@+id/button9"
         android:layout_alignEnd="@+id/button9" />
+
+    <Button
+        android:text="-"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/button"
+        android:onClick="touchOperation"
+        android:layout_below="@+id/button11"
+        android:layout_toLeftOf="@+id/button11"
+        android:layout_toStartOf="@+id/button11" />
+
+    <Button
+        android:text="*"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/button10"
+        android:onClick="touchOperation"
+        android:layout_below="@+id/button11"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp" />
+
+    <Button
+        android:text="/"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/button12"
+        android:onClick="touchOperation"
+        android:layout_below="@+id/button0"
+        android:layout_toRightOf="@+id/button10"
+        android:layout_toEndOf="@+id/button10"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp" />
+
+    <Button
+        android:text="+"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:id="@+id/button13"
+        android:onClick="touchOperation"
+        android:layout_below="@+id/button1"
+        android:layout_toRightOf="@+id/button10"
+        android:layout_toEndOf="@+id/button10" />
 </RelativeLayout>
