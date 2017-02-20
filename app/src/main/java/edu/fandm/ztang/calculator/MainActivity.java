@@ -2,6 +2,7 @@ package edu.fandm.ztang.calculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -68,10 +69,15 @@ public class MainActivity extends AppCompatActivity {
 
         newCalcModel.performOperation(operationText);
 
-
-        //display the operation to the displayView
-        displayText = operationText;
-        displayToView();
+        if(operationText.equals("=")){
+            double result = newCalcModel.getResult();
+            displayText =  Double.toString(result);
+            displayToView();
+        }else{
+            //display the operation to the displayView
+            displayText = operationText;
+            displayToView();
+        }
 
     }
 
