@@ -80,6 +80,16 @@ public class CalculatorModel {
         System.out.print(result);
     }
 
+    public void clear(){
+
+        accumulator = 0.0;
+        isPending = false;
+        firstOperand = 0.0;
+        result = 0.0;
+        operationSymbol = "";
+
+    }
+
 
 
 
